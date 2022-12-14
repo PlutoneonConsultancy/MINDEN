@@ -7,9 +7,10 @@ body {
   margin: 0;
   perspective-origin: 40% 40%;
   perspective: 32em;
-  background: rgb(2,0,36);
+  background: #795009;
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,80,9,1) 35%, rgba(0,212,255,1) 100%);
   color: silver;
+  display: flex;
 }
 
 * {
@@ -21,7 +22,7 @@ body {
 .container {
   width: 100%;
   min-height: 100vh;
-  background: #3b1f52;
+  background: #795009;
   overflow: hidden;
 }
 
