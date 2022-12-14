@@ -278,8 +278,8 @@ body {
 ** Apply common styles to each line of text
 */
 .Words-line {
-  height: 50px;
-  overflow: hidden;
+  height: 40px;
+  overflow: auto;
   position: relative;
 }
 .Words-line:nth-child(odd) {
