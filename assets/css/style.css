@@ -7,7 +7,8 @@ body {
   margin: 0;
   perspective-origin: 40% 40%;
   perspective: 32em;
-  background: linear-gradient(#000000, #696969);
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,80,9,1) 35%, rgba(0,212,255,1) 100%);
   color: silver;
 }
 
@@ -246,15 +247,6 @@ body {
 .polygon--square {
   border: solid .125em;
   background: linear-gradient(64deg, rgba(255, 137, 59, 0.2), rgba(251, 231, 204, 0.2));
-}
-html {
-  background-color: #5138BE;
-  height: 100%;
-}
-
-body {
-  color: #FFFFFF;
-  display: flex;
 }
 
 /*
