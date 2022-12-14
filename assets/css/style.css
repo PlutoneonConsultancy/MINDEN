@@ -15,7 +15,7 @@ body {
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 10px 10px 10px 10px;
   box-sizing: border-box;
 }
 
@@ -309,7 +309,7 @@ body {
 p {
   height: 50px;
   line-height: 45px;
-  padding: 0 10px;
+  padding: 10px 10px 8px 10px;
   transition: all 0.4s ease-in-out;
   transform: translate3d(0, 0, 0);
   vertical-align: top;
