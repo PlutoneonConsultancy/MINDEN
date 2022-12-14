@@ -20,7 +20,7 @@ body {
 .container {
   width: 100%;
   min-height: 100vh;
-  background: #1d0035;
+  background: #3b1f52;
   overflow: hidden;
 }
 
@@ -278,7 +278,7 @@ body {
 ** Apply common styles to each line of text
 */
 .Words-line {
-  height: 70px;
+  height: 60px;
   overflow: hidden;
   position: relative;
 }
