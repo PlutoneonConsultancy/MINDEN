@@ -1,3 +1,16 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  perspective-origin: 40% 40%;
+  perspective: 32em;
+  background: linear-gradient(#000000, #696969);
+  color: silver;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -92,4 +105,145 @@
     0 0 300px rgba(251, 98, 0, 0.6),
     0 0 400px rgba(251, 98, 0, 0.8),
     0 0 500px rgba(251, 98, 0, 1);
+}
+.polyhedron, .polyhedron *, .polyhedron :before, .polyhedron :after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+.polyhedron--octahedron {
+  animation: rot 17.38s linear infinite;
+}
+.polyhedron__face:nth-child(1) {
+  transform: rotateY(0deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(2) {
+  transform: rotateY(90deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(3) {
+  transform: rotateY(180deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(4) {
+  transform: rotateY(270deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(5) {
+  transform: rotate(180deg) rotateY(0deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(6) {
+  transform: rotate(180deg) rotateY(90deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(7) {
+  transform: rotate(180deg) rotateY(180deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(8) {
+  transform: rotate(180deg) rotateY(270deg) rotateX(35.24786deg) translateZ(8.16497em);
+}
+.polyhedron__face:nth-child(9) {
+  transform: rotateY(-45deg) rotate(45deg) translateZ(14.14214em);
+}
+.polyhedron__face:nth-child(10) {
+  transform: rotateY(45deg) rotate(45deg) translateZ(14.14214em);
+}
+.polyhedron__face:nth-child(11) {
+  transform: rotateY(135deg) rotate(45deg) translateZ(14.14214em);
+}
+.polyhedron__face:nth-child(12) {
+  transform: rotateY(225deg) rotate(45deg) translateZ(14.14214em);
+}
+.polyhedron__face:nth-child(13) {
+  transform: rotateX(90deg) translateZ(14.14214em);
+}
+.polyhedron__face:nth-child(14) {
+  transform: rotateX(-90deg) translateZ(14.14214em);
+}
+
+@keyframes rot {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.transformer {
+  animation: ani 8s linear infinite alternate;
+}
+.transformer--vertex {
+  animation-name: vertex;
+}
+.transformer--face {
+  animation-name: face;
+}
+
+@keyframes vertex {
+  0%, 12.5% {
+    transform: scale(0) translateZ(0);
+  }
+  37.5%, 62.5% {
+    transform: scale(0.33) translateZ(-4.71405em);
+  }
+  87.5%, 100% {
+    transform: scale(0.5) translateZ(-7.07107em);
+  }
+}
+@keyframes edge {
+  0%, 12.5% {
+    background-size: 100% 100%, 100% 100%;
+  }
+  37.5%, 62.5% {
+    background-size: 100% 33.3%, 33.3% 100%;
+  }
+  87.5%, 100% {
+    background-size: 100% 0, 0 100%;
+  }
+}
+@keyframes face {
+  0%, 12.5% {
+    transform: translateY(2.88675em) rotate(180deg) scale(2);
+  }
+  37.5%, 62.5% {
+    transform: translateY(2.88675em) rotate(180deg) scale(1);
+  }
+  87.5%, 100% {
+    transform: translateY(2.88675em) rotate(180deg) scale(0.5);
+  }
+}
+.polygon, .polygon:before {
+  overflow: hidden;
+  margin:  -10em;
+  width: 20em;
+  height: 20em;
+}
+.polygon--triangle {
+  transform: translateY(5.7735em) rotate(30deg) skewY(30deg) scaleX(0.86603);
+}
+.polygon--triangle__b, .polygon--triangle:before, .polygon--triangle:after {
+  overflow: hidden;
+  margin: -8.66025em -10em;
+  width: 20em;
+  height: 17.32051em;
+  transform: scaleX(1.1547) skewY(-30deg) rotate(-30deg) translateY(-50%);
+}
+.polygon--triangle:empty {
+  border: solid .125em;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.polygon--triangle:empty:before {
+  border: solid .125e;
+  background: linear-gradient(100deg, rgba(185, 219, 203, 0.2), rgba(84, 166, 187, 0.2));
+  content: '';
+}
+.polygon--triangle.outermorph, .polygon--triangle.outermorph:after {
+  background: linear-gradient(90deg, #c0c0c0 0.125em, rgba(0, 0, 0, 0) 0.125em), linear-gradient(#c0c0c0 0.125em, rgba(0, 0, 0, 0) 0.125em);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation: edge 8s linear infinite alternate;
+}
+.polygon--triangle.outermorph:after {
+  background-image: linear-gradient(90deg, #c0c0c0 0.125em, rgba(0, 0, 0, 0) 0.125em), linear-gradient(0deg, #c0c0c0 0.125em, rgba(0, 0, 0, 0) 0.25em);
+  content: '';
+}
+.polygon--square {
+  border: solid .125em;
+  background: linear-gradient(64deg, rgba(255, 137, 59, 0.2), rgba(251, 231, 204, 0.2));
 }
