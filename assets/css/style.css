@@ -50,7 +50,7 @@ body {
 }
 
 .polyhedron--octahedron {
-  animation: rot 17.38s linear infinite;
+  animation: rot 20s linear infinite;
 }
 
 .polyhedron__face {
@@ -65,4 +65,4 @@ body {
   transform: rotateY(45deg) translateZ(100px);
 }
 
-.polyhedron__face:
+.poly
