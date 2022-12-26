@@ -18,6 +18,10 @@ body {
   cursor: pointer; }
 
 h1, h2, h3, h4 {
+  font-family: "Dyslexie Regular";
+  overflow-x: hidden;
+  font-size: 25px;
+  padding: 0px;
   margin: 0px;
   line-height: 1.8; }
 
@@ -32,6 +36,10 @@ a, a:hover {
   color: #009FE3; }
 
 p {
+  font-family: "Dyslexie Regular";
+  overflow-x: hidden;
+  font-size: 15px;
+  padding: 0px;
   margin-bottom: 20px;
   line-height: 1.8; }
 
