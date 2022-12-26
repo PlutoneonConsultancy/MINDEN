@@ -2,30 +2,41 @@
 body {
   font-family: 'Brush Script MT', cursive;
   overflow-x: hidden;
-  font-size: 15px;
-  padding: 0px;
-  background-color: #ab6a0f; }
+  font-size: 25px;
+  padding: 2px;
+  background-color: #dbd5d6;
+  color: #ab6a0f; 
+}
 
 .btn {
-  cursor: pointer; }
+  cursor: pointer; 
+}
 
 h1, h2, h3, h4 {
+  font-size: 35px;
   margin: 0px;
-  line-height: 1.8; }
+  line-height: 1.8; 
+  color: #ab6a0f; 
+}
 
 ul {
   margin: 0px;
   padding: 0px;
-  list-style: none; }
+  list-style: none; 
+  color: #ab6a0f; 
+}
 
 a, a:hover {
   font-family: 'Brush Script MT', cursive;
   text-decoration: none;
-  color: #e86181; }
+  color: #e86181; 
+}
 
 p {
   margin-bottom: 20px;
-  line-height: 1.8; }
+  line-height: 1.8;
+  color: #ab6a0f; 
+}
 
 /* End Base style */
 * {
