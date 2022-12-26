@@ -1,3 +1,40 @@
+@font-face {
+  font-family: "Dyslexie Regular";
+  src: url("/font/font-2019/Dyslexie-Regular.eot");
+  src: url("/font/font-2019/Dyslexie-Regular.eot?#iefix") format("embedded-opentype"), url("/font/font-2019/Dyslexie-Regular.woff") format("woff"), url("/font/font-2019/Dyslexie-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Dyslexie Bold";
+  src: url("/font/font-2019/Dyslexie-Bold.eot");
+  src: url("/font/font-2019/Dyslexie-Bold.eot?#iefix") format("embedded-opentype"), url("/font/font-2019/Dyslexie-Bold.woff") format("woff"), url("/font/font-2019/Dyslexie-Bold.ttf") format("truetype"); }
+/* Base style */
+body {
+  font-family: "Dyslexie Regular";
+  overflow-x: hidden;
+  font-size: 15px;
+  padding: 0px;
+  background-color: #F4F2F2; }
+
+.btn {
+  cursor: pointer; }
+
+h1, h2, h3, h4 {
+  margin: 0px;
+  line-height: 1.8; }
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+
+a, a:hover {
+  font-family: "Dyslexie Regular";
+  text-decoration: none;
+  color: #009FE3; }
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.8; }
+
 * {
   margin: 0;
   padding: 0;
