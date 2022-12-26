@@ -3,7 +3,7 @@ body {
   font-family: 'Courier New', monospace;
   overflow-x: hidden;
   font-size: 25px;
-  padding: 2px;
+  padding: 22px;
   background-color: #dbd5d6;
   color: #ab6a0f; 
 }
@@ -41,7 +41,7 @@ p {
   text-indent: 50px;
   text-align: justify;
   letter-spacing: 3px;
-  padding: 26px;
+  padding: 88px;
 }
 
 /* End Base style */
