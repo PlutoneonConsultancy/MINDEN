@@ -1,14 +1,6 @@
-@font-face {
-  font-family: "Dyslexie Regular";
-  src: url("/font/font-2019/Dyslexie-Regular.eot");
-  src: url("/font/font-2019/Dyslexie-Regular.eot?#iefix") format("embedded-opentype"), url("/font/font-2019/Dyslexie-Regular.woff") format("woff"), url("/font/font-2019/Dyslexie-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Dyslexie Bold";
-  src: url("/font/font-2019/Dyslexie-Bold.eot");
-  src: url("/font/font-2019/Dyslexie-Bold.eot?#iefix") format("embedded-opentype"), url("/font/font-2019/Dyslexie-Bold.woff") format("woff"), url("/font/font-2019/Dyslexie-Bold.ttf") format("truetype"); }
 /* Base style */
 body {
-  font-family: "Dyslexie Regular";
+  font-family: 'Brush Script MT', cursive;
   overflow-x: hidden;
   font-size: 15px;
   padding: 0px;
@@ -27,7 +19,7 @@ ul {
   list-style: none; }
 
 a, a:hover {
-  font-family: "Dyslexie Regular";
+  font-family: 'Brush Script MT', cursive;
   text-decoration: none;
   color: #009FE3; }
 
