@@ -1,6 +1,6 @@
 /* Base style */
 body {
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Courier New', monospace;
   overflow-x: hidden;
   font-size: 25px;
   padding: 2px;
@@ -13,7 +13,9 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-size: 35px;
+  font-size: 45px;
+  text-align: center;
+  text-transform: uppercase;
   margin: 0px;
   line-height: 1.8; 
   color: #ab6a0f; 
@@ -36,6 +38,9 @@ p {
   margin-bottom: 20px;
   line-height: 1.8;
   color: #ab6a0f; 
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
 }
 
 /* End Base style */
