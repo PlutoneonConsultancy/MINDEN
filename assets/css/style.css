@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
   font-size: 15px;
   padding: 0px;
-  background-color: #F4F2F2; }
+  background-color: #ab6a0f; }
 
 .btn {
   cursor: pointer; }
@@ -21,7 +21,7 @@ ul {
 a, a:hover {
   font-family: 'Brush Script MT', cursive;
   text-decoration: none;
-  color: #009FE3; }
+  color: #e86181; }
 
 p {
   margin-bottom: 20px;
