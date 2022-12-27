@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 		line-height: 1.1;
 		margin: 0 0 1.5rem 0;
 		text-transform: none;
+		text-align: center;
 	}
 
 	h2 {
@@ -59,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 	h6 {
 		font-size: 0.625rem;
 	}
+
 @media screen and (max-width: 736px) {
 
 		h1 {
