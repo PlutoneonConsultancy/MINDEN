@@ -2,7 +2,7 @@
 body {
   font-family: 'Courier New', monospace;
   overflow-x: hidden;
-  font-size: 25px;
+  font-size: 35px;
   padding: 22px;
   background-color: #dbd5d6;
   color: #ab6a0f; 
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-size: 45px;
+  font-size: 55px;
   text-align: center;
   text-transform: uppercase;
   margin: 0px;
