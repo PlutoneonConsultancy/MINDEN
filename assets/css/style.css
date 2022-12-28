@@ -6,7 +6,7 @@ body {
   font-size: 2vw;
   padding: 4vh;
   background-color: #a3902a;
-  color: #1d0035;
+  color: RebeccaPurple;
 }
 
 .btn {
@@ -14,7 +14,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-		color: #1d0035;
+		color: RebeccaPurple;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -186,7 +186,8 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 	p {
-		  margin-bottom: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 		  line-height: 1.8;
 		  color: #69119c; 
 		  text-indent: 50px;
