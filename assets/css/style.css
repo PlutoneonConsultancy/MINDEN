@@ -296,3 +296,100 @@ h1, h2, h3, h4, h5, h6 {
 .fractal {
   fill: purple;
 }
+
+@import 'compass/css3';
+
+$t: 5s;
+
+@function getPolyPoints(
+		$n: 3 /* number of poly vertices */, 
+		$oa: -90deg /* angular offset of 1st poly vertex */) {
+	
+	$ba: 360deg/$n; // base angle corrensponding to 1 poly edge
+	$pl: (); // list of points, initially empty
+	
+	@for $i from 0 to $n {
+		$ca: $i*$ba + $oa; // angle current point is at wrt x axis
+		$x: 50%*(1 + cos($ca)); // x coord of current point
+		$y: 50%*(1 + sin($ca)); // y coord of current point
+		$pl: $pl, $x $y // add current point coords to points list
+	}
+	
+	@return $pl
+}
+
+@function use($map, $key, $default) {
+	@return if(map-has-key($map, $key), map-get($map, $key), $default)
+}
+
+@mixin s8hedron($l, $bg, $ani: false, $shadow: false) {
+	$n3gon: 3; // number of vertices of triangular octahedron faces
+	$ba3gon: 360deg/$n3gon; // base angle corresponding to equilateral triangle edge
+	$rc3gon: .5*$l/sin(.5*$ba3gon); // circumradius of equilateral triangle of edge $l
+	
+	$n8hedron: 8;
+	$m: .5*$n8hedron;
+	$rc8hedron: $l/sqrt(2);
+	$rm8hedron: .5*$l;
+	$rax8hedron: atan($rm8hedron/$rc8hedron)*180deg/pi(); // x rotation angle for octahedron faces
+	$ri8hedron: $rc8hedron*sin($rax8hedron); // inradius of octahedron
+	
+	--i: 0;
+	--j: 0;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform-style: preserve-3d;
+	animation: rot $t linear calc((var(--p) - 1)*#{$t}) infinite;
+	animation-play-state: if($ani, null, paused);
+	
+	@if $shadow {
+		&:before {
+			position: absolute;
+			margin: -1px;
+			padding: 1px;
+			transform: 
+				translatey(calc(#{$rc8hedron} + #{use($shadow, dy, 0px)})) 
+				rotatex(90deg);
+			box-shadow: 0 0 .25*$rm8hedron $rm8hedron currentcolor;
+			background: currentcolor;
+			color: use($shadow, c, silver);
+			content: ''
+		}
+	}
+	
+	&__face {
+		position: absolute;
+		margin: -$rc3gon;
+		padding: $rc3gon;
+		transform: rotatey(calc(var(--i)*-1turn/#{$m})) 
+			rotate(calc((1 - var(--j))*.5turn)) 
+			rotatex($rax8hedron) 
+			translatez($ri8hedron);
+		background: $bg;
+		filter: brightness(calc(1 + var(--j)*.1));
+		--shape: polygon(getPolyPoints());
+		-webkit-clip-path: var(--shape);
+						clip-path: var(--shape);
+		animation: shade .5*$t ease-in-out calc((var(--p) - var(--i)/#{$m})*#{$t}) infinite alternate;
+		animation-play-state: inherit;
+		
+		&:nth-child(n + #{$m + 1}) { --j: 1 }
+		
+		@for $i from 1 to $m { &:nth-child(#{$m}n + #{$i + 1}) { --i: #{$i} } }
+	}
+	
+	@keyframes rot { 0% { transform: rotatey(1turn) } }
+	
+	@keyframes shade { to { filter: brightness(calc(.5 + var(--j)*.1)) } }
+}
+
+body {
+	--p: 0;
+	overflow: hidden;
+	height: 100vh;
+	perspective: 25em;
+	perspective-origin: 50% calc(50% - 1em);
+	background:gainsboro
+}
+
+.s8hedron { @include s8hedron(25vmin, #7e2b83, true, (dy: 2em)) }
