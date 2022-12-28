@@ -467,3 +467,144 @@ body {
       rgba(#FF893B, $of), rgba(#FBE7CC, $of));
   }
 }
+
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  perspective-origin: 65% 35%;
+  perspective: 25em;
+  background: radial-gradient(at 0 0, #333d35, #0e130d);
+}
+
+div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.a3d {
+  top: 50%;
+  left: 50%;
+}
+
+.s8hedron {
+  --k: 0;
+  --not-k: calc(1 - var(--k));
+  --sgn-k: calc(1 - 2*var(--k));
+  --f: calc(var(--k) + var(--not-k)*0.70711);
+  --dim: scale3d(var(--f), var(--f), var(--f));
+  --ri3d: calc(var(--n-rows)*2.04124vmin);
+  transform: var(--dim);
+  animation: r 8s linear infinite;
+}
+.s8hedron__face {
+  --i: 0;
+  --sgn-i: calc(2*var(--i) - 1);
+  display: grid;
+  place-content: start center;
+  width: calc(var(--n-rows)*5.7735vmin);
+  height: calc(var(--n-rows)*5.7735vmin);
+  transform: translate(-50%, -50%) rotatey(calc(var(--j)*90deg)) rotatex(calc(var(--sgn-i)*35.26439deg)) translatez(var(--ri3d)) scale(-1, var(--sgn-i));
+}
+.s8hedron__face:nth-child(4n + 1) {
+  --j: 0;
+}
+.s8hedron__face:nth-child(4n + 2) {
+  --j: 1;
+}
+.s8hedron__face:nth-child(4n + 3) {
+  --j: 2;
+}
+.s8hedron__face:nth-child(4n + 4) {
+  --j: 3;
+}
+.s8hedron__face:nth-child(n + 5) {
+  --i: 1;
+}
+.s8hedron:nth-child(2) {
+  --k: 1;
+}
+
+@keyframes r {
+  to {
+    transform: var(--dim) rotatey(calc(var(--sgn-k)*-1turn));
+  }
+}
+.s3gon {
+  position: relative;
+  grid-column: var(--cidx);
+  margin: -0.72169vmin -1.63675vmin;
+  width: 5.7735vmin;
+  height: 5.7735vmin;
+  --ini: scale(calc(var(--not-k) + var(--k)*.9), calc(var(--not-k) + var(--k)*.95));
+  transform: var(--ini);
+  --dt: calc((var(--cidx)/var(--n-cols) - var(--j))/4*8s - 8s);
+  animation: a 4s var(--dt) infinite alternate;
+  animation-name: mov, shd;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
+}
+.s3gon:first-child {
+  margin-top: 0;
+}
+.s3gon::before, .s3gon::after {
+  --in: 0;
+  --o: calc(var(--in)*5px);
+  position: absolute;
+  top: var(--o);
+  right: var(--o);
+  bottom: var(--o);
+  left: var(--o);
+  transform-origin: 50% calc(2.16506vmin - var(--o));
+  transform: rotate(calc((var(--ridx) + var(--cidx) + var(--n-rows) - 1)*.5turn));
+  background: greenyellow;
+  --poly: polygon(50% 0%, 93.30127% 75%, 6.69873% 75%);
+  clip-path: var(--poly);
+  filter: hue-rotate(calc(var(--not-k)*15deg)) contrast(calc(1 + var(--not-k)*.5)) brightness(calc(1 - var(--in)*.2 - var(--not-k)*.1)) grayScale(calc(.25*var(--in)));
+  content: "";
+}
+.s3gon::after {
+  --in: 1;
+}
+
+@keyframes mov {
+  0% {
+    transform: var(--ini) translatez(calc(var(--k)*(1.5*var(--ridx) - 1)*1.44338vmin)) scale(calc(var(--not-k) + var(--k)*.5));
+  }
+  100% {
+    transform: var(--ini);
+  }
+}
+@keyframes shd {
+  to {
+    filter: brightness(calc(.2 + .5*(1 + var(--sgn-k))));
+  }
+}
+a {
+  --sf: 0;
+  position: absolute;
+  bottom: .25em;
+  left: 50%;
+  border: solid .125em currentcolor;
+  padding: 0 .5em;
+  transform: translate(-50%);
+  color: greenyellow;
+  font: 1.5em/ 2 ubuntu mono, consolas, monaco, monospace;
+  text-align: center;
+  text-decoration: none;
+}
+a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -.5px;
+  left: 0;
+  transform-origin: 0 0;
+  transform: scalex(var(--sf));
+  background: currentcolor;
+  mix-blend-mode: difference;
+  transition: transform .3s;
+  content: "";
+}
+a:hover {
+  --sf: 1;
+}
