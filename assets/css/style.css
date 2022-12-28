@@ -300,3 +300,170 @@ h1, h2, h3, h4, h5, h6 {
     0 0 400px rgba(251, 98, 0, 0.8),
     0 0 500px rgba(251, 98, 0, 1);
 }
+
+@import 'compass/css3';
+
+$l: 20em;
+$mt: 8s;
+$of: .2;
+$wirec: silver;
+
+$tri_n: 3;
+$tri_ca: 360deg/$tri_n;
+$tri_a: ($tri_n - 2)*180deg/$tri_n;
+$tri_ra: $tri_a/2;
+$tri_sa: 90deg - $tri_a;
+$tri_sf: cos($tri_sa);
+$tri_h: $l*sin($tri_a);
+$tri_rc: ($l/2)/sin($tri_ca/2);
+$tri_ri: ($l/2)/tan($tri_ca/2);
+
+$quad_n: 4;
+$quad_ca: 360deg/$quad_n;
+
+$octa_n: 8;
+$octa_nv: 6;
+$octa_rc: $l/sqrt(2);
+$octa_ri: $l/sqrt(6);
+$octa_rax: 90deg - acos(1/sqrt(3)); 
+
+@mixin size-position($w, $h: $w) {
+  margin: if($h == $w, unquote(''), -$h/2) (-$w/2);
+  width: $w; height: $h;
+}
+
+html, body { height: 100%; }
+
+body {
+  overflow: hidden;
+  margin: 0;
+  perspective-origin: 40% 40%;
+  perspective: 32em;
+  background: linear-gradient(black, dimgrey);
+  color: $wirec;
+}
+
+.polyhedron {
+  &, & *, & :before, & :after {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform-style: preserve-3d;
+  }
+  &--octahedron {
+    animation: rot 17.38s linear infinite;
+  }
+  &__face {
+    @for $i from 0 to $octa_n {
+      &:nth-child(#{$i + 1}) {
+        transform: 
+          if(floor($i/$quad_n) == 1, rotate(180deg), ()) 
+          rotateY(($i%$quad_n)*$quad_ca) 
+          rotateX($octa_rax) 
+          translateZ($octa_ri);
+      }
+    }
+    @for $i from 0 to $octa_nv {
+      &:nth-child(#{$octa_n + $i + 1}) {
+        transform: 
+          if($i < $quad_n, 
+             rotateY(($i - .5)*$quad_ca) rotate($quad_ca/2), 
+             rotateX(pow(-1, $i)*$quad_ca)) 
+          translateZ($octa_rc)
+      }
+    }
+  }
+}
+
+
+@keyframes rot {
+  to { transform: rotateY(360deg); }
+}
+
+.transformer {
+  animation: ani $mt linear infinite alternate;
+  &--vertex {
+    animation-name: vertex;
+  }
+  &--face {
+    animation-name: face;
+  }
+}
+
+@keyframes vertex {
+  0%, 12.5% { transform: scale(0) translateZ(0); }
+  37.5%, 62.5% { transform: scale(.33) translateZ(-$octa_rc/3); }
+  87.5%, 100% { transform: scale(.5) translateZ(-$octa_rc/2); }
+}
+
+@keyframes edge {
+  0%, 12.5% { background-size: 100% 100%, 100% 100%; }
+  37.5%, 62.5% { background-size: 100% 33.3%, 33.3% 100%; }
+  87.5%, 100% { background-size: 100% 0, 0 100%; }
+}
+
+@keyframes face {
+  0%, 12.5% {
+    transform: translateY(2*$tri-ri - $tri_h/2) 
+      rotate(180deg) scale(2);
+  }
+  37.5%, 62.5% {
+    transform: translateY(2*$tri-ri - $tri_h/2) 
+      rotate(180deg) scale(1);
+  }
+  87.5%, 100% {
+    transform: translateY(2*$tri-ri - $tri_h/2) 
+      rotate(180deg) scale(.5);
+  }
+}
+
+.polygon {
+  &, &:before {
+    overflow: hidden;
+    @include size-position($l);
+  }
+  &--triangle {
+    transform: translateY($tri_ri) 
+      rotate($tri_ra) skewY($tri_sa) scaleX($tri_sf) ;
+    &__b, &:before, &:after {
+      overflow: hidden;
+      @include size-position($l, $tri-h);
+      transform: 
+        scaleX(1/$tri_sf) skewY(-$tri_sa) rotate(-$tri_ra) 
+        translateY(-50%);
+    }
+    &:empty {
+      border: solid .125em;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      &:before {
+        border: solid .125e;
+        background: linear-gradient(random(360)*1deg, 
+          rgba(#B9DBCB, $of), rgba(#54A6BB, $of));
+        content: '';
+      }
+    }
+    &.outermorph {
+      &, &:after {
+        background: linear-gradient(90deg, 
+                          $wirec .125em, transparent .125em),
+          linear-gradient($wirec .125em, transparent .125em);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        animation: edge $mt linear infinite alternate;
+      }
+      &:after {
+        background-image: linear-gradient(90deg, 
+                          $wirec .125em, transparent .125em),
+          linear-gradient(0deg, 
+                          $wirec .125em, transparent .25em);
+        content: '';
+      }
+    }
+  }
+  &--square {
+    border: solid .125em;
+    background: linear-gradient(random(360)*1deg, 
+      rgba(#FF893B, $of), rgba(#FBE7CC, $of));
+  }
+}
