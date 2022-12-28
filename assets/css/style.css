@@ -198,28 +198,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End Base style */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  background: #1d0035;
+body {
   overflow: hidden;
-}
-
-.main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-  transform: perspective(700px);
+  margin: 0;
+  height: 100vh;
+  perspective-origin: 65% 35%;
+  perspective: 25em;
+  background: radial-gradient(at 0 0, #333d35, #0e130d);
 }
 
 div {
