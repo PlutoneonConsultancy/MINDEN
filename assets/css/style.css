@@ -263,7 +263,7 @@ p {
   }
 }
 
-.box .octahedron .face::before {
+.box .octahedron .top::before {
   content: '';
   position: absolute;
   width: 400px;
