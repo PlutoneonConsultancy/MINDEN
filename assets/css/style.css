@@ -277,7 +277,7 @@ div {
   left: var(--o);
   transform-origin: 50% calc(2.16506vmin - var(--o));
   transform: rotate(calc((var(--ridx) + var(--cidx) + var(--n-rows) - 1)*.5turn));
-  background: RebeccaPurple;
+  background: Gold;
   --poly: polygon(50% 0%, 93.30127% 75%, 6.69873% 75%);
   clip-path: var(--poly);
   filter: hue-rotate(calc(var(--not-k)*15deg)) contrast(calc(1 + var(--not-k)*.5)) brightness(calc(1 - var(--in)*.2 - var(--not-k)*.1)) grayScale(calc(.25*var(--in)));
@@ -300,32 +300,4 @@ div {
     filter: brightness(calc(.2 + .5*(1 + var(--sgn-k))));
   }
 }
-a {
-  --sf: 0;
-  position: absolute;
-  bottom: .25em;
-  left: 50%;
-  border: solid .125em currentcolor;
-  padding: 0 .5em;
-  transform: translate(-50%);
-  color: greenyellow;
-  font: 1.5em/ 2 ubuntu mono, consolas, monaco, monospace;
-  text-align: center;
-  text-decoration: none;
-}
-a::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: -.5px;
-  left: 0;
-  transform-origin: 0 0;
-  transform: scalex(var(--sf));
-  background: currentcolor;
-  mix-blend-mode: difference;
-  transition: transform .3s;
-  content: "";
-}
-a:hover {
-  --sf: 1;
-}
+
