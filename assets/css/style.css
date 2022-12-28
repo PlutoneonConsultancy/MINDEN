@@ -211,15 +211,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-body {
-  overflow: hidden;
-  margin: 0;
-  height: 100vh;
-  perspective-origin: 65% 35%;
-  perspective: 25em;
-  background: radial-gradient(at 0 0, #333d35, #0e130d);
-}
-
 div {
   position: absolute;
   transform-style: preserve-3d;
