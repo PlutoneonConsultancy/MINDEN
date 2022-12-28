@@ -6,7 +6,7 @@ body {
   font-size: 2vw;
   padding: 4vh;
   background-color: #a3902a;
-  color: #ab6a0f;
+  color: #1d0035;
 }
 
 .btn {
@@ -14,7 +14,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-		color: #a3902a;
+		color: #1d0035;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -277,7 +277,7 @@ div {
   left: var(--o);
   transform-origin: 50% calc(2.16506vmin - var(--o));
   transform: rotate(calc((var(--ridx) + var(--cidx) + var(--n-rows) - 1)*.5turn));
-  background: greenyellow;
+  background: indigo;
   --poly: polygon(50% 0%, 93.30127% 75%, 6.69873% 75%);
   clip-path: var(--poly);
   filter: hue-rotate(calc(var(--not-k)*15deg)) contrast(calc(1 + var(--not-k)*.5)) brightness(calc(1 - var(--in)*.2 - var(--not-k)*.1)) grayScale(calc(.25*var(--in)));
