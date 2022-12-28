@@ -198,14 +198,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End Base style */
 
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  background: #1d0035;
-  overflow: hidden;
-}
-
 div {
   position: absolute;
   transform-style: preserve-3d;
