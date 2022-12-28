@@ -172,31 +172,32 @@ h1, h2, h3, h4, h5, h6 {
 
 		}
 
-ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none; 
-  color: #ab6a0f; 
-}
+		ul {
+		  margin: 0px;
+		  padding: 0px;
+		  list-style: none; 
+		  color: #ab6a0f; 
+		}
 
-a, a:hover {
-  font-family: 'Brush Script MT', cursive;
-  text-decoration: none;
-  color: #e86181; 
-}
+		a, a:hover {
+		  font-family: 'Brush Script MT', cursive;
+		  text-decoration: none;
+		  color: #e86181; 
+		}
 
-p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-  color: #ab6a0f; 
-  text-indent: 50px;
-  text-align: justify;
-  letter-spacing: 3px;
-  margin: 0 0 2rem 0;
-  padding: 88px;
-}
+		p {
+		  margin-bottom: 20px;
+		  line-height: 1.8;
+		  color: #ab6a0f; 
+		  text-indent: 50px;
+		  text-align: justify;
+		  letter-spacing: 3px;
+		  margin: 0 0 2rem 0;
+		  padding: 88px;
+		}
 
-/* End Base style */
+		/* End Base style */
+
 * {
   margin: 0;
   padding: 0;
@@ -262,3 +263,21 @@ p {
   background: radial-gradient(#fb6200, #fb6200, #c3300f);
   transform: rotateY(45deg) translateZ(100px);
 }
+
+.box .octahedron .face:nth-child(1) span {
+  transform: rotateY(0deg) translateZ(100px);
+}
+
+.box .octahedron .face:nth-child(2) span {
+  transform: rotateY(45deg) translateZ(100px);
+}
+
+.box .octahedron .face:nth-child(3) span {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.box .octahedron .face:nth-child(4) span {
+  transform: rotateY(135deg) translateZ(100px);
+}
+
+.box .octahedron .face:nth-child(5) span {
