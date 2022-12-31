@@ -357,3 +357,22 @@ div {
 .footer .links a:first-child {
   margin-left: 0;
 }
+
+@media (max-width: 991.98px) {
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer .infos,
+  .footer .links {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  .footer span {
+    display: none;
+  }
+}
