@@ -301,3 +301,59 @@ div {
   }
 }
 
+.footer {
+  position: relative;
+  bottom: 8px;
+  right: 16px;
+  width: 100%;
+  z-index: 999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+  margin-top: 50px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .infos {
+  text-align: right;
+  color: #fff;
+  opacity: 1;
+  width: 50%;
+  margin-bottom: -1px;
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+.footer .infos a {
+  color: inherit;
+  display: inline-block;
+}
+
+.footer span {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
+
+.footer .links {
+  width: 50%;
+  text-align: left;
+  padding: 0 4px;
+}
+
+.footer .links a {
+  display: inline-block;
+  margin: 0 15px;
+  color: #fff;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.footer .links a:first-child {
+  margin-left: 0;
+}
